@@ -1,0 +1,47 @@
+---
+
+import data from '../data/site.json';
+
+
+---
+
+<div class="relative z-10">
+<div class="max-w-7xl mx-auto mt-20 px-7">
+  
+ 
+<div class="group relative overflow-hidden
+            bg-gradient-to-br from-slate-900 to-blue-950
+            
+            hover:border-slate-500
+            hover:-translate-y-1
+            transition-all duration-300
+            rounded-3xl p-8 shadow-xl">
+<!-- border border-slate-700/50 -->
+
+
+
+  <!-- brillo -->
+<div class="absolute inset-0 -translate-x-full
+            bg-gradient-to-r from-transparent via-white/10 to-transparent
+            group-hover:translate-x-full
+            transition-transform duration-1000">
+</div>
+     <h2 class="text-3xl  font-bold text-white mb-2">
+      Empresas
+    </h2>
+<div class="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2 justify-center px-6">
+
+    {data.work.map((works,index)=>(  
+        <div key={index} class="bg-white w-full  h-[220px] p-7 rounded-2xl mt-[10px] flex flex-col items-center justify-center">
+                 
+            <img class="w-556 h-22 object-contain mb-5" src={works.image} alt="">
+            <h2 class="text-blue-950 text-[18px] text-center font-bold">
+                {works.name}
+            </h2>
+             
+        </div>
+    ))}
+</div>
+</div>
+</div>
+</div>

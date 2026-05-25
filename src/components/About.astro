@@ -1,0 +1,56 @@
+---
+
+import data from '../data/site.json';
+
+
+---
+
+
+<div class="relative z-10">
+
+    
+<div class="max-w-7xl mx-auto mt-20 px-6">
+  
+ 
+<div class="group relative overflow-hidden
+            bg-gradient-to-br from-slate-900 to-blue-950
+           
+            hover:border-slate-500
+            hover:-translate-y-1
+            transition-all duration-300
+            rounded-3xl p-8 shadow-xl">
+        <!--border border-slate-700/50-->
+
+
+
+
+
+  <!-- brillo -->
+<div class="absolute inset-0 -translate-x-full
+            bg-gradient-to-r from-transparent via-white/10 to-transparent
+            group-hover:translate-x-full
+            transition-transform duration-1000">
+</div>
+     <h2 class="text-3xl  font-bold text-white mb-2">
+      Skills
+    </h2>
+<div class="max-w-[950px] mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-center px-4">
+
+    {data.skills.map((skill,index)=>(  
+        <div key={index} class="bg-white w-[130px] h-[120px] p-2 rounded-2xl mt-[10px] flex flex-col items-center justify-center">
+                 
+            <img class="w-16 h-12 object-contain mb-1" src={skill.image} alt="">
+            <h2 class="text-blue-950 text-[18px] text-center font-bold">
+                {skill.name}
+            </h2>
+             
+        </div>
+    ))}
+</div>
+</div>
+</div>
+</div>
+
+
+
+
