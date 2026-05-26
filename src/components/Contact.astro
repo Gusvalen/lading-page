@@ -1,18 +1,4 @@
 ---
-<script>
-  // Al cargar la página, revisamos los parámetros de la URL
-  const urlParams = new URLSearchParams(window.location.search);
-  
-  if (urlParams.get('success') === 'true') {
-    const alert = document.getElementById('success-alert');
-    if (alert) {
-      alert.classList.remove('hidden'); // Muestra el mensaje
-      
-      // Opcional: Limpia la URL eliminando el "?success=true" para que no se quede ahí si recargan
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-  }
-</script>
 ---
 
 <div class="max-w-7xl mx-auto mt-20 px-6">
@@ -85,6 +71,24 @@
           Enviar Mensaje
         </button>
       </form>
+      <script>
+        // Al cargar la página, revisamos los parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (urlParams.get("success") === "true") {
+          const alert = document.getElementById("success-alert");
+          if (alert) {
+            alert.classList.remove("hidden"); // Muestra el mensaje
+
+            // Opcional: Limpia la URL eliminando el "?success=true" para que no se quede ahí si recargan
+            window.history.replaceState(
+              {},
+              document.title,
+              window.location.pathname,
+            );
+          }
+        }
+      </script>
     </div>
   </div>
 </div>
