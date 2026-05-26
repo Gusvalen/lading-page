@@ -1,3 +1,20 @@
+---
+<script>
+  // Al cargar la página, revisamos los parámetros de la URL
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  if (urlParams.get('success') === 'true') {
+    const alert = document.getElementById('success-alert');
+    if (alert) {
+      alert.classList.remove('hidden'); // Muestra el mensaje
+      
+      // Opcional: Limpia la URL eliminando el "?success=true" para que no se quede ahí si recargan
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }
+</script>
+---
+
 <div class="max-w-7xl mx-auto mt-20 px-6">
   <div
     class="group relative overflow-hidden bg-gradient-to-br from-slate-900 to-blue-950 rounded-3xl p-8 shadow-xl hover:border-slate-500 hover:-translate-y-1 transition-all duration-300"
@@ -13,6 +30,12 @@
       <h2 class="text-3xl font-bold text-white mb-2">Contáctame</h2>
 
       <p class="text-slate-400 mb-8">Completa el formulario</p>
+      <div
+        id="success-alert"
+        class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-center font-medium shadow-lg shadow-emerald-500/5"
+      >
+        ¡Gracias! Tu mensaje ha sido enviado con éxito. ✨
+      </div>
       <form
         class="flex flex-col gap-5"
         action="https://formsubmit.co/beb429ee6bbd9c3f2ebc9ea87ca209cf"
@@ -21,7 +44,7 @@
         <input
           type="hidden"
           name="_next"
-          value="https://gusvalen.github.io/lading-page/"
+          value="https://gusvalen.github.io/lading-page/?success=true"
         />
 
         <input type="hidden" name="_captcha" value="false" />
